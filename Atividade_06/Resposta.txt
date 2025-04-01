@@ -1,0 +1,14 @@
+Olha, primeiro de tudo eu começaria entendendo onde estão os gargalos. Pra isso, ativaria logs detalhados do processo em lote e analisaria os tempos de cada etapa. Às vezes o problema não tá no banco ou no FTP, mas na lógica mesmo.
+
+Depois disso, usaria ferramentas como JProfiler ou VisualVM pra monitorar uso de CPU, memória, threads... ajuda bastante a entender se tem algo travando ou se tá sobrecarregando.
+
+No banco de dados, eu pegaria o slow query log ou usaria EXPLAIN nas queries pra ver se tem alguma mal otimizada. Às vezes, só de criar um índice certo ou reescrever uma query já resolve. Também evito N+1 e faço paginação quando tem muito dado.
+
+Na parte de lógica, tento enxugar o máximo: evitar processamentos desnecessários, colocar tarefas pesadas em paralelo se puder, e sempre checar se não dá pra antecipar validações antes de fazer chamadas mais caras.
+
+Já no FTP, costumo usar SFTP com compressão, agrupar arquivos pra não ficar mandando um por um, e se der, deixo a transferência rodar em paralelo. Ferramentas como FileZilla ou até lftp ajudam a testar o desempenho.
+
+Pra acompanhar tudo isso, uso Prometheus com Grafana pra ter visibilidade, e se o projeto permitir, algo mais completo como New Relic ou Dynatrace também ajuda bastante.
+
+No fim, é uma combinação: entender bem o fluxo, medir com as ferramentas certas e ir otimizando aos poucos.
+

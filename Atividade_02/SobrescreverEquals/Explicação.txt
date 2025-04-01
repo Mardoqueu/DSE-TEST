@@ -1,0 +1,29 @@
+Exemplo de cenário onde sobrescrever o método equals() é necessário em Java
+No desenvolvimento de sistemas orientados a objetos em Java, há situações em que é necessário comparar objetos com base
+no conteúdo de seus atributos e não apenas por referência. Por padrão, o método equals() da classe Object realiza a
+comparação utilizando a referência de memória, ou seja, verifica se duas variáveis apontam para o mesmo objeto. Esse
+comportamento pode ser inadequado para determinadas aplicações.
+
+Considere, por exemplo, uma classe Pessoa com os atributos nome e cpf. No contexto da aplicação, deseja-se que duas
+pessoas sejam consideradas iguais caso possuam o mesmo CPF, independentemente de serem instâncias distintas. Para isso,
+ é necessário sobrescrever o método equals() para refletir essa lógica de igualdade.
+
+Considerações ao sobrescrever o método equals()
+A implementação do método equals() deve obedecer ao contrato definido pela linguagem Java, que exige as seguintes propriedades:
+
+Reflexividade: para qualquer objeto x, x.equals(x) deve retornar true.
+
+Simetria: para quaisquer objetos x e y, x.equals(y) deve retornar true se, e somente se, y.equals(x) também retornar true.
+
+Transitividade: para quaisquer objetos x, y e z, se x.equals(y) e y.equals(z) retornam true, então x.equals(z) também
+deve retornar true.
+
+Consistência: chamadas múltiplas a x.equals(y) devem retornar consistentemente o mesmo valor, desde que os objetos não
+sejam modificados.
+
+Não-nulo: para qualquer objeto x, x.equals(null) deve retornar false.
+
+Adicionalmente, sempre que o método equals() for sobrescrito, o método hashCode() também deve ser sobrescrito para
+manter a coerência entre os dois. Isso é fundamental para o funcionamento correto de coleções baseadas em hashing, como
+HashSet e HashMap. O contrato entre equals() e hashCode() determina que, se dois objetos são considerados iguais pelo
+método equals(), eles devem retornar o mesmo valor no método hashCode().

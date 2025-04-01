@@ -1,0 +1,12 @@
+Tenho sólida experiência com Angular, especialmente a partir da versão 7 até a atual. Ao longo da minha carreira como desenvolvedor frontend, utilizei o Angular em diversos projetos corporativos e SaaS, aproveitando seus principais recursos como:
+
+Componentização: divisão clara entre lógica, template e estilo.
+Data Binding: ligação eficiente entre o modelo e a visualização.
+Dependency Injection: injeção de serviços de forma nativa.
+Roteamento com Lazy Loading: carregamento sob demanda de módulos.
+Observables e RxJS: para lidar com eventos assíncronos e reatividade.
+Comunicação entre componentes: via @Input, @Output, EventEmitter e serviços com Subject.
+
+Em um projeto de dashboard administrativo para uma escola, precisei integrar diversos componentes reutilizáveis (como gráficos, cards e filtros), com comunicação fluida entre eles.
+
+Um recurso chave foi a comunicação entre componentes irmãos através de um serviço compartilhado.

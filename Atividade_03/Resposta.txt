@@ -1,0 +1,13 @@
+Para desacoplar meu código de uma biblioteca de terceiros que pode ser substituída no futuro, eu usaria o padrão de projeto Adapter. Esse padrão permite que você crie uma interface própria no seu sistema, adaptando a implementação da biblioteca externa sem acoplar diretamente seu código a ela.
+
+Vantagens:
+Desacoplamento: Você isola o uso da biblioteca em uma camada específica, facilitando a substituição por outra biblioteca no futuro.
+
+Testabilidade: É mais fácil criar mocks ou stubs da interface própria do sistema para testes.
+
+Manutenção: Mudanças na biblioteca afetam apenas a classe adaptadora, não o sistema inteiro.
+
+Limitações:
+Código extra: É necessário criar uma interface e uma classe adaptadora.
+
+Duplicação de lógica: Se a biblioteca mudar frequentemente, a manutenção da classe adaptadora pode ser trabalhosa.

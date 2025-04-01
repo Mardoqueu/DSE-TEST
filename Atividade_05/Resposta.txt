@@ -1,0 +1,16 @@
+Para evitar ataques de SQL Injection, sigo práticas bem definidas que garantem a segurança da camada de acesso a dados. Abaixo estão as principais técnicas que utilizo:
+
+Consultas Parametrizadas:
+Evito concatenar diretamente dados do usuário nas consultas SQL. Em vez disso, uso prepared statements que separam a estrutura da query dos dados inseridos.
+
+Uso de ORM:
+ORMs como Hibernate ou JPA facilitam a abstração do SQL e oferecem segurança automaticamente ao parametrizar as queries.
+
+Validação e Saneamento de Dados:
+Mesmo com consultas parametrizadas, sempre valido os dados recebidos, especialmente entradas que envolvem identificadores (ID, CPF, etc.) ou valores esperados em listas.
+
+Privilégios de Banco de Dados:
+Utilizo contas específicas de acesso ao banco com privilégios mínimos necessários para a operação da aplicação. Assim, mesmo que um invasor obtenha acesso, o impacto será limitado.
+
+Monitoramento e Logs:
+Monitoração ativa do banco e análise de logs ajudam a detectar tentativas de injeção, como erros de sintaxe incomuns ou tentativas de comentários (--, /* */).
